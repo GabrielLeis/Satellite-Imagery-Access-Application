@@ -60,7 +60,7 @@ public class CopernicusClient {
         String endTime   = interval.getEndTime().toInstant().toString();
         String startTime = interval.getStartTime().toInstant().toString();
 
-        System.out.println("Buscando imágenes reales entre:");
+        System.out.println("\nBuscando imágenes reales entre:");
         System.out.println("   Inicio: " + startTime);
         System.out.println("   Fin:    " + endTime);
 
@@ -84,7 +84,7 @@ public class CopernicusClient {
 
                 if(json.contains("Id")){
 
-                    System.out.println("Imágenes encontradas");
+                    System.out.println("\nImágenes encontradas");
 
                     //Se busca el valor de la respuesta JSON correspondiente con el Id del producto y se obtiene en productId
                     int indexId = json.indexOf("\"Id\"");
@@ -100,7 +100,7 @@ public class CopernicusClient {
                     String downloadUrl = "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(" + productId + ")/$value";
                     System.out.println(downloadUrl);
 
-                    //downloadFile(downloadUrl, productId);
+                    downloadFile(downloadUrl, productId);
 
                     return downloadUrl;
                 } else {

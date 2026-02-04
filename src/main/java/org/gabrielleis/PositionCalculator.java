@@ -67,7 +67,7 @@ public class PositionCalculator {
         AbsoluteDate startDate = fiveDaysAgo;
         AbsoluteDate endDate = startDate.shiftedBy(3600.0 * 24);
 
-        System.out.println("Simulating from " + startDate + " to " + endDate + "...");
+        System.out.println("\nSimulando desde el " + startDate + " al " + endDate + "...");
         propagator.propagate(startDate, endDate);
 
         /*Se accede a los registros de los eventos y se obtiene la visibilidad del satélite
